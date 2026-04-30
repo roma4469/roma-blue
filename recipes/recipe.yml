@@ -49,7 +49,7 @@ modules:
 
   - type: script
     scripts:
-      - install-cargo-apps.sh
+      - install-spotify-player.sh
 
   - type: default-flatpaks
     configurations:

@@ -1,4 +1,4 @@
-# roma-blue &nbsp; [![bluebuild build badge](https://github.com/roma4469/roma-blue/actions/workflows/build.yml/badge.svg)](https://github.com/roma4469/roma-blue/actions/workflows/build.yml)
+# wayblue-niri &nbsp; [![bluebuild build badge](https://github.com/roma4469/wayblue-niri/actions/workflows/build.yml/badge.svg)](https://github.com/roma4469/wayblue-niri/actions/workflows/build.yml)
 
 This is my own spin on Wayblue Niri by installing Nocturne Shell in place of Waybar and tweaking things as I like them.
 

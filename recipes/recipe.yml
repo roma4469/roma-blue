@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: wayblue-niri
+name: roma-blue
 # description will be included in the image's metadata
 description: This is my spin of Wayblue Niri image with Noctalia-Shell.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/wayblueorg/niri
+base-image: ghcr.io/wayblueorg/niri-nvidia-open
 image-version: latest
 
 # module configuration, executed in order

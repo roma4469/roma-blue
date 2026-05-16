@@ -2,6 +2,7 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
 name: wayblue-niri
+
 # description will be included in the image's metadata
 description: This is my spin of Wayblue Niri image with Noctalia-Shell.
 
@@ -49,7 +50,7 @@ modules:
 
   - type: script
     scripts:
-      - install-spotify-player.sh
+        - install-spotify-player_rev01.sh
 
   - type: default-flatpaks
     configurations:

@@ -1,0 +1,63 @@
+# recipes/common-modules.yml
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/module-list-v1.json
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+  - type: dnf
+    repos:
+#      files:
+#        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+      copr:
+        - atim/starship
+    install:
+      packages:
+        - terra-release
+        - noctalia-shell
+        - noctalia-qs
+        - brightnessctl
+        - cliphist
+        - wlsunset
+        - evolution-data-server
+        - starship
+        - kitty
+        - fish
+        - fastfetch
+        - yazi
+        - btop
+        - chezmoi.x86_64 # dotfile git
+        - chezmoi-fish-completion.noarch # dotfile git
+    remove:
+      packages:
+        # example: removing firefox (in favor of the flatpak)
+        # "firefox" is the main package, "firefox-langpacks" is a dependency
+        - firefox
+        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: script
+    scripts:
+        - install-spotify-player_rev01.sh
+
+  - type: default-flatpaks
+    configurations:
+      - notify: true # Send notification after install/uninstall is finished (true/false)
+        scope: system
+        # If no repo information is specified, Flathub will be used by default
+        install: # system flatpaks we want all users to have and not remove
+         # - org.mozilla.firefox
+          - app.zen_browser.zen
+          - org.gnome.Loupe
+          - io.github.diegopvlk.Cine
+          - io.podman_desktop.PodmanDesktop
+          - org.gnome.DejaDup
+          - io.github.olaproeis.Ferrite
+      - scope: user # Also add Flathub user repo, but no user packages
+  # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing
+
